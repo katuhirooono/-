@@ -1,0 +1,990 @@
+@charset "utf-8";
+/* 全体の設定 */
+body {
+    font-family: "Kiwi Maru", serif;
+    background-color: rgb(129, 123, 123);
+}
+img {
+    max-width: 100%;
+}
+.container {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+.topBtn {
+    font-size: 24px;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    padding: 15px;
+    color: rgb(248, 243, 243);
+    border-radius: 12px;
+    background-color: rgb(49, 47, 47);
+    opacity: 0.8;
+}
+.bodySec {
+    overflow: hidden;
+}
+h2 {
+    font-size: 24px;
+    padding: 20px;
+    font-weight: bold;
+    background-color: rgb(49, 47, 47);
+    color: rgb(248, 243, 243);
+}
+
+/* ヘッダー */
+
+.title {
+    font-size: 24px;
+    padding: 20px;
+    font-weight: bold;
+    background-color: rgb(49, 47, 47);
+    color: rgb(248, 243, 243);
+}
+
+.headerSec {
+    background-color: rgb(255, 255, 255);
+}
+/* トップ用 */
+.top {
+    height: 720px;
+    position: relative;
+    background: url(../images/topBack.png) no-repeat center/cover;
+    overflow: auto;
+}
+
+.onOff {
+    cursor : pointer;
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(49, 47, 47, .9);
+}
+.topDor {
+    cursor : pointer;
+    height: 300px;
+    object-fit: contain;
+    position: absolute;
+    z-index: 10;
+    left: 300px;
+    bottom: 400px;
+}
+.topSkill {
+    cursor : pointer;
+    height: 300px;
+    object-fit: contain;
+    position: absolute;
+    z-index: 10;
+    left: 650px;
+    bottom: 370px;
+}
+
+.topTv {
+    cursor : pointer;
+    height: 480px;
+    object-fit: contain;
+    position: absolute;
+    z-index: 10;
+    left: 10px;
+    bottom: 10px;
+}
+.topTvCon {
+    height: 100px;
+    object-fit: contain;
+    position: absolute;
+    z-index: 10;
+    left: 360px;
+    bottom: 0;
+}
+.topTel {
+    cursor : pointer;
+    height: 100px;
+    object-fit: contain;
+    position: absolute;
+    z-index: 10;
+    left: 830px;
+    bottom: 320px;
+}
+.topLight {
+    cursor : pointer;
+    height: 250px;
+    object-fit: contain;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 500px;
+}
+.topGirl {
+    display: none;
+    height: 400px;
+    object-fit: contain;
+    position: absolute;
+    z-index: 20;
+    left: 790px;
+    bottom: 170px;
+}
+.topGirl02 {
+    cursor : pointer;
+    display: none;
+    height: 270px;
+    object-fit: contain;
+    position: absolute;
+    z-index: 20;
+    left: 350px;
+    bottom: 250px;
+}
+.topGirlSkill {
+    display: none;
+    height: 350px;
+    object-fit: contain;
+    position: absolute;
+    z-index: 20;
+    left: 630px;
+    bottom: 300px;
+}
+.topGirlGame {
+    display: none;
+    height: 450px;
+    object-fit: contain;
+    position: absolute;
+    z-index: 20;
+    left: 390px;
+    bottom: 0;
+}
+.popSkill {
+    height: 150px;
+    object-fit: contain;
+    position: absolute;
+    z-index: 20;
+    top: 0;
+    left: 800px;
+}
+.popGallery {
+    height: 150px;
+    object-fit: contain;
+    position: absolute;
+    z-index: 20;
+    left: 50px;
+    bottom: 400px;
+}
+.popAddress {
+    height: 150px;
+    object-fit: contain;
+    position: absolute;
+    z-index: 20;
+    right: 50px;
+    bottom: 450px;
+}
+.popSkill, .popGallery, .popAddress {
+    cursor : pointer;
+    animation-name: popAnime;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+.bikkuri {
+    position: absolute;
+    display: none;
+}
+.bikkuri00 {
+    height: 150px;
+    object-fit: contain;
+    position: absolute;
+    z-index: 101;
+    right: 850px;
+    bottom: 450px;
+}
+.bikkuri01 {
+    height: 150px;
+    object-fit: contain;
+    position: absolute;
+    z-index: 101;
+    right: 600px;
+    bottom: 580px;
+}
+.bikkuri02 {
+    height: 150px;
+    object-fit: contain;
+    position: absolute;
+    z-index: 101;
+    right: 800px;
+    bottom: 350px;
+}
+.bikkuri03 {
+    height: 150px;
+    object-fit: contain;
+    position: absolute;
+    z-index: 101;
+    right: 350px;
+    bottom: 450px;
+}
+
+
+/* スキル */
+.skillSec {
+    background-color: rgb(205, 200, 200);
+    border-bottom: dotted 2px rgb(49, 47, 47);
+    position: relative;
+    padding-bottom: 100px;
+    margin-bottom: 100px;
+}
+.skillSec::after {
+    content: "";
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 500px;
+    height: 1500px;
+    z-index: -1;
+    background: url(../images/mainBack.png) no-repeat center/cover;
+
+}
+.skillHeading {
+    font-size: 24px;
+    margin-bottom: 20px;
+    line-height: 36px;
+    border-bottom: solid 1px #fff;
+}
+.mySkill {
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    height: 250px;
+    padding: 0 40px;
+    margin: 20px;
+}
+.skillCon01, .skillCon02 {
+    cursor : pointer;
+    display: none;
+    padding: 20px;
+    width: 400px;
+    height: 200px;
+    background-color: rgb(49, 47, 47);
+    color: #fff;
+    animation-name: transparency;
+    animation-duration: 1s;
+}
+.skilGirl {
+    height: 250px;
+    object-fit: contain;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+/* ギャラリー */
+.gallerySec {
+    background-color: rgb(185, 180, 180);
+    border-bottom: dotted 2px rgb(49, 47, 47);
+}
+.galleryTitle, .skillTitle, .codeTitle {
+    text-align: center;
+    padding: 20px;
+    font-size: 36px;
+}
+.slide {
+    overflow: hidden;
+}
+.myGallery {
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    transition: all 1s;
+}
+.slideR {
+    transform: translateX(-300px);
+}
+.imgSec {
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 200px;
+}
+
+.myGallery img {
+    height: 100%;
+    width: 400px;
+    object-fit: cover;
+}
+
+.siteTitle {
+    font-size: 24px;
+    text-decoration: underline;
+}
+.gallerySec li {
+    margin-bottom: 20px;
+}
+
+.exercises01,
+.exercises02,
+.portfolio01,
+.portfolio02 {
+    display: none;
+    width: 350px;
+    height: 350px;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(49, 47, 47);
+    color: #fff;
+    animation-name: transparency;
+    animation-duration: 1s;
+}
+
+.exercises01:hover,
+.exercises02:hover,
+.portfolio01:hover,
+.portfolio02:hover {
+    animation-name: sway;
+    animation-duration: .5s;
+}
+.galleryCon {
+    height: 250px;
+    position: relative;
+}
+.galleryBack {
+    width: 90%;
+    height: 150px;
+    z-index: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    margin: 0 auto;
+}
+.galleryGirl {
+    cursor : pointer;
+    height: 300px;
+    z-index: 20;
+    position: absolute;
+    bottom: 0;
+    left: 350px;
+    transition: 1s;
+}
+.arrowR {
+    cursor : pointer;
+    height: 150px;
+    object-fit: contain;
+    position: absolute;
+    left: 500px;
+    bottom: 100px;
+    transition: 1s;
+}
+.arrowL {
+    cursor : pointer;
+    display: none;
+    height: 150px;
+    object-fit: contain;
+    position: absolute;
+    left: 200px;
+    bottom: 100px;
+    transform: scaleX(-1);
+}
+.galleryGirl02 {
+    left: 900px;
+    transform: scaleX(-1);    
+}
+.arrowR02 {
+    left: 700px;
+    transform: scaleX(-1);
+}
+
+/* ソースコード */
+.codeSec {
+    background-color: rgb(165, 160, 160);
+    color: rgb(248, 243, 243);
+}
+.codeHeading {
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+
+.codeCon {
+    display: flex;
+    justify-content: center;
+    padding: 20px 30px;
+}
+.codeSec li {
+    font-size: 24px;
+    line-height: 34px;
+    border-bottom: 1px solid rgb(248, 243, 243);
+}
+
+.codeBox {
+    width: 300px;
+    border-radius: 10px;
+    background-color: rgb(49, 47, 47);
+    padding: 10px 20px;
+    margin: 0 20px;
+}
+span {
+    display: inline-block;
+}
+.black {
+    opacity: 0.5;
+}
+.portfolioCode:hover {
+    transform: scale(1.1);
+}
+.exercises01Code:hover {
+    transform: scale(1.1);
+}
+.exercises02Code:hover {
+    transform: scale(1.1);
+}
+/* フッター */
+.footerSec {
+    background-color: rgb(165, 160, 160);
+    color: rgba(49, 47, 47);
+}
+.mail, .footerSec p {
+    display: block;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+/* モーダル */
+.js-modal {
+    position: fixed;
+    top: 0;
+    left: 0; 
+    display: none;
+    z-index: 10;
+    width: 100%;
+    height: 100Vh;
+    background-color: rgba(49, 47, 47, .7);
+}
+.js-skillModal01, .js-skillModal02 {
+    display: none;
+    margin: auto;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 20;
+    padding: 20px;
+    width: 400px;
+    height: 200px;
+    background-color: rgb(49, 47, 47);
+    color: #fff;
+    transform: scale(2);
+    animation-name: modal01Anime;
+    animation-duration: .5s;
+}
+
+/* ローディング画面 */
+.js-loding {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    z-index: 150;
+    background-color: rgb(49, 47, 47);
+}
+.js-lodingOut {
+    transform: translateY(-2000PX);
+    transition: 1s;
+}
+.lodingText {
+    text-align: center;
+    display: flex;
+    font-size: 36px;
+    z-index: 151;
+    color:rgb(248, 243, 243);
+}
+.LodingL {
+    animation: lodingAnime 2s infinite;
+    animation-delay: 1s;
+}
+.LodingO {
+    animation: lodingAnime 2s infinite;
+    animation-delay: 1.1s;
+}
+.LodingD {
+    animation: lodingAnime 2s infinite;
+    animation-delay: 1.2s;
+}
+.LodingI {
+    animation: lodingAnime 2s infinite;
+    animation-delay: 1.3s;
+}
+.LodingN {
+    animation: lodingAnime 2s infinite;
+    animation-delay: 1.4s;
+}
+.LodingG {
+    animation: lodingAnime 2s infinite;
+    animation-delay: 1.5s;
+}
+.LodingP01 {
+    animation: lodingAnime 2s infinite;
+    animation-delay: 1.6s;
+}
+.LodingP02 {
+    animation: lodingAnime 2s infinite;
+    animation-delay: 1.7s;
+}
+.LodingP03 {
+    animation: lodingAnime 2s infinite;
+    animation-delay: 1.8s;
+}
+/* アニメーション */
+/* ローディング画面 */
+@keyframes lodingAnime {
+    0% {
+        transform: translateY(0px);
+        transform-origin: top;
+    }
+    25% {
+        transform: scaleX(-1);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    80% {
+        transform: translateY(0px) scaleX(1) scaleY(0.5);
+        transform-origin: bottom;
+    }
+    90% {
+        transform: scaleY(0.5);
+        
+    }
+    100% {
+        transform: scaleY(1);
+    }
+}
+/* 揺れ */
+@keyframes sway {
+    0% {
+        transform: rotate(-15deg);
+    }
+    25% {
+        transform: rotate(15deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    75% {
+        transform: rotate(5deg);
+    }
+    100% {
+        transform: rotate(0);
+    }
+}
+/* 透明度 */
+@keyframes transparency {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+/* 拡大 */
+@keyframes modal01Anime {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(2);
+    }
+}
+/* フキダシ */
+@keyframes popAnime {
+    0% {
+        transform: rotate(-5deg);
+        transform-origin: bottom;
+    }
+    25% {
+        transform: rotate(5deg);
+
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+    75% {
+        transform: rotate(5deg);
+
+    }
+    100% {
+        transform: rotate(-5deg);
+    }
+}
+
+@keyframes galleryAnime {
+    0% {
+        transform: translateX(0px);
+        transform: scaleX(0);
+    }
+    100% {
+        transform: translateX(300px);
+        transform: scaleX(-1);
+    }
+}
+@keyframes galleryArowAnimeR {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(10px);
+    }
+}
+@keyframes galleryArowAnimeL {
+    0% {
+        transform: translateX(0px);
+    }
+    100% {
+        transform: translateX(-10px);
+    }
+}
+
+/*///////////////////// タブレット ////////////////////////*/
+@media screen and (max-width:768px) {
+    html {
+        min-width: 768px;
+    }
+    .container {
+        width: 768px;
+    }
+    /* ヘッダー */
+    .headerSec {
+        overflow: hidden;
+    }
+    /* トップ用 */
+    .top {
+        height: 700px;
+        width: 800px;
+        background: url(../images/topBack.png) no-repeat 100% 50%/cover;
+        background-size: 100%;
+    }
+
+    .topDor {
+        height: 210px;
+        left: 200px;
+        bottom: 370px;
+    }
+    .topSkill {
+        height: 250px;
+        left: 380px;
+        bottom: 350px;
+    }
+
+    .topTv {
+        height: 400px;
+        left: -100px;
+        bottom: 0px;
+    }
+    .topTvCon {
+        height: 70px;
+        left: 200px;
+        bottom: 0px;
+    }
+    .topTel {
+        height: 55px;
+        left: 490px;
+        bottom: 325px;
+    }
+    .topLight {
+        height: 200px;
+        top: 0;
+        left: 300px;
+    }
+    .topGirl {
+        height: 250px;
+        left: 490px;
+        bottom: 230px;
+    }
+    .topGirl02 {
+        display: block;
+        height: 300px;
+        left: 300px;
+        bottom: 0;
+    }
+    .topGirlSkill {
+        height: 250px;
+        left: 380px;
+        bottom: 320px;
+    }
+    .topGirlGame {
+        height: 350px;
+        left: 220px;
+        bottom: -5px;
+    }
+    .popSkill {
+        height: 130px;
+        top: 20px;
+        left: 500px;
+    }
+    .popGallery {
+        height: 130px;
+        left: 0;
+        bottom: 330px;
+    }
+    .popAddress {
+        height: 130px;
+        left: 600px;
+        right: 0;
+        bottom: 430px;
+    }
+    .bikkuri00 {
+        height: 150px;
+        right: 350px;
+        bottom: 230px;
+    }
+    .bikkuri01 {
+        height: 120px;
+        right: 330px;
+        bottom: 530px;
+    }
+    .bikkuri02 {
+        right: 400px;
+        bottom: 300px;
+    }
+    .bikkuri03 {
+        height: 120px;
+        right: 200px;
+        bottom: 450px;
+    }
+    /* スキル */
+    .skillSec {
+        padding-bottom: 0;
+    }
+    .mySkill {
+        display: block;
+        height: auto;
+        width: auto;
+        padding: 20px 0;
+    }
+    .skillCon01, .skillCon02 {
+        display: block;
+        margin: 0 auto;
+        margin-bottom: 30px;
+    }
+    .skilGirl {
+        height: 250px;
+        object-fit: contain;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+    }
+
+    /* ギャラリー */
+
+    .imgSec {
+        width: 260px;
+        height: 200px;
+    }
+
+    .exercises01,
+    .exercises02,
+    .portfolio01,
+    .portfolio02 {
+        display: block;
+        width: 300px;
+        height: 350px;
+        margin: 20px;
+        padding: 20px;
+    }
+
+    .galleryBack {
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .galleryGirl {
+        left: 50px;
+    }
+    .arrowR {
+        left: 200px;
+    }
+    .galleryGirl02 {
+        left: 600px;
+    }
+    .arrowR02 {
+        left: 400px;
+    }
+    /* ソースコード */
+    .codeCon {
+        flex-wrap: wrap;
+        padding: 20px 10px;
+    }
+    .codeHeading {
+        font-size: 18px;
+    }
+    .codeSec li {
+        font-size: 16px;
+    }
+    .codeBox {
+        width:40%;
+        margin: 10px;
+    }
+
+}
+/*///////////////////// スマホ ////////////////////////*/
+@media screen and (max-width:375px) {
+        html {
+            min-width: 375px;
+        }
+        .container {
+            width: 375px;
+        }
+        /* トップ用 */
+        .top {
+            height: 700px;
+            width: 1000px;
+            background: url(../images/topBack.png) no-repeat -130% 30%/cover;
+            background-size: 80%;
+        }
+
+        .topDor {
+            left: 10px;
+            bottom: 420px;
+        }
+        .topSkill {
+            left: 160px;
+            bottom: 410px;
+        }
+
+        .topTel {
+            left: 230px;
+            bottom: 375px;
+        }
+        .topLight {
+            height: 150px;
+            top: 0;
+            left: 120px;
+        }
+        .topGirl {
+            left: 220px;
+            bottom: 275px;
+        }
+        .topGirl02 {
+            display: block;
+            height: 280px;
+            left: 80px;
+            bottom: 50px;
+            z-index: 5;
+        }
+        .topGirlSkill {
+            left: 150px;
+            bottom: 380px;
+        }
+        .topGirlGame {
+            left: 120px;
+        }
+        .popSkill {
+            height: 100px;
+            top: 0;
+            left: 250px;
+        }
+        .popGallery {
+            height: 100px;
+            bottom: 100px;
+        }
+        .popAddress {
+            height: 100px;
+            left: 240px;
+            bottom: 480px;
+        }
+        .topTv {
+            height: 400px;
+            left: -200px;
+            bottom: 0px;
+        }
+        .topTvCon {
+            height: 70px;
+            left: 95px;
+            bottom: 0px;
+        }
+        .bikkuri00 {
+            left: 100px;
+            bottom: 250px;
+        }
+        .bikkuri01 {
+            left: 100px;
+            top: 0;
+        }
+        .bikkuri02 {
+            left: 130px;
+            bottom: 250px;
+        }
+        .bikkuri03 {
+            left: 200px;
+            bottom: 400px;
+        }
+        /* スキル */
+
+        .skillCon01, .skillCon02 {
+            width: 300px;
+            height: 300px;
+        }
+        .skillSec::after {
+            right: -100px;
+        }
+        /* ギャラリー */
+
+        .myGallery {
+            padding: 20px 20px;
+        }
+
+        .imgSec {
+            width: 260px;
+            height: 200px;
+        }
+        .exercises01,
+        .exercises02,
+        .portfolio01,
+        .portfolio02 {
+            width: 300px;
+            height: 350px;
+            margin: 20px;
+            padding: 20px;
+        }
+
+        .galleryGirl {
+            left: 110px;
+        }
+        .arrowR {
+            height: 100px;
+            bottom: 120px;
+            left: 230px;
+        }
+        .arrowL {
+            display: block;
+            height: 100px;
+            left: 20px;
+            bottom: 120px;
+            transform: scaleX(-1);
+        }
+        .galleryGirl02 {
+            transform: scaleX(-1);
+        }
+        .arrowR {
+            transform: scaleX(1);
+        }
+        /* ソースコード */
+        span {
+            display: inline-block;
+        }
+        .codeHeading {
+            font-size: 14px;
+        }
+        .codeSec li {
+            font-size: 12px;
+        }
+        .black p { 
+            font-size: 10px;
+        }
+}
