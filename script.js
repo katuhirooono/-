@@ -1,69 +1,42 @@
 'use strict'
 
 // スクロールイベント
-const skillCon01 = document.querySelector('.skillCon01');
-const skillCon02 = document.querySelector('.skillCon02');  
+const skillCon = document.querySelectorAll('.skillCon');
+
 const exercises01 = document.querySelector('.exercises01');
 const exercises02 = document.querySelector('.exercises02');
 const portfolio01 = document.querySelector('.portfolio01');
 const portfolio02 = document.querySelector('.portfolio02');
 
 window.addEventListener("scroll", function () {
-    if(window.scrollY >= 300) {
-        skillCon01.style.display ='block';
-        skillCon02.style.display ='block';
-    }
-    if(window.scrollY >= 500) {
-        exercises01.style.display ='block';
-    }
-    if(window.scrollY >= 600) {
-        exercises02.style.display ='block';
-    }
-    if(window.scrollY >= 700) {
-        portfolio01.style.display ='block';
+    if(window.scrollY >= 400) {
+        for(let k = 0; k < skillCon.length; k++){
+            skillCon[k].style.display ='block';
+        }
     }
     if(window.scrollY >= 800) {
+        exercises01.style.display ='block';
+    }
+    if(window.scrollY >= 850) {
+        exercises02.style.display ='block';
+    }
+    if(window.scrollY >= 900) {
+        portfolio01.style.display ='block';
+    }
+    if(window.scrollY >= 950) {
         portfolio02.style.display ='block';
     }
 });
 
 // ローディング画面
 const loding = document.querySelector('.js-loding');
+const body = document.querySelector('.bodySec') //ボディにoverflow:hidden;を設定するための設定
 
 loding.addEventListener('click', function() {
     loding.style.display = 'block';
     body.style.overflow = 'visible'
     loding.classList.add('js-lodingOut');
 });
-
-
-// モーダル////////////////////////////////////////////////////////////////////////////////////////
-
-const modal = document.querySelector('.js-modal'); //ウィンドウ背景の変数
-const modal01 = document.querySelector('.js-skillModal01');
-const modal02 = document.querySelector('.js-skillModal02');
-const body = document.querySelector('.bodySec') //ボディにoverflow:hidden;を設定するための設定
-
-skillCon01.addEventListener('click', function() {
-    modal.style.display = 'block';
-    modal01.style.display = 'block';
-    body.style.overflow = 'hidden';
-});
-
-skillCon02.addEventListener('click', function() {
-    modal.style.display = 'block';
-    modal02.style.display = 'block';
-    body.style.overflow = 'hidden';
-});
-function modalclose(e) {
-    if (e.target == modal) {
-        modal.style.display = 'none';
-        modal01.style.display = 'none';
-        modal02.style.display = 'none';
-        body.style.overflow = 'visible';
-    }
-  }
-  addEventListener('click', modalclose);
 
 // トップ/////////////////////////////////////////////////////////////////////////////
 
@@ -200,7 +173,7 @@ const winSizeSp = window.matchMedia('(max-width:375px)');
 let j = 1;
 
 arrowR.addEventListener('click', function() {
-    if(j === 3){
+    if(j === 4){
         j = 1;
         myGallery.style.transform = 'translateX(0px)';
     } else {
@@ -217,6 +190,10 @@ arrowR.addEventListener('click', function() {
                 break;
             case 3:
                 myGallery.style.transform = 'translateX(-680px)';
+                galleryGirl.classList.remove("galleryGirl02");
+                break;
+            case 4:
+                myGallery.style.transform = 'translateX(-1020px)';
                 galleryGirl.classList.remove("galleryGirl02");
                 break;
         }
@@ -264,8 +241,8 @@ arrowR.addEventListener('click', function() {
 
 arrowL.addEventListener('click', function() {
     if(j === 1){
-        j = 3;
-        myGallery.style.transform = 'translateX(-680px)';
+        j = 4;
+        myGallery.style.transform = 'translateX(-1020px)';
     } else {
         j--;
     if(winSizeSp.matches) {
@@ -280,6 +257,10 @@ arrowL.addEventListener('click', function() {
                 break;
             case 3:
                 myGallery.style.transform = 'translateX(-680px)';
+                galleryGirl.classList.add("galleryGirl02");
+                break;
+            case 4:
+                myGallery.style.transform = 'translateX(-1020px)';
                 galleryGirl.classList.add("galleryGirl02");
                 break;
         }

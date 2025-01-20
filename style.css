@@ -259,12 +259,14 @@ h2 {
     padding: 0 40px;
     margin: 20px;
 }
-.skillCon01, .skillCon02 {
+.skillCon {
     cursor : pointer;
     display: none;
+    margin: 20px;
     padding: 20px;
     width: 400px;
     height: 200px;
+    line-height: 20px;
     background-color: rgb(49, 47, 47);
     color: #fff;
     animation-name: transparency;
@@ -458,8 +460,7 @@ span {
     height: 100Vh;
     background-color: rgba(49, 47, 47, .7);
 }
-.js-skillModal01, .js-skillModal02 {
-    display: none;
+.js-skillModal {
     margin: auto;
     position: fixed;
     top: 0;
@@ -467,11 +468,6 @@ span {
     bottom: 0;
     left: 0;
     z-index: 20;
-    padding: 20px;
-    width: 400px;
-    height: 200px;
-    background-color: rgb(49, 47, 47);
-    color: #fff;
     transform: scale(2);
     animation-name: modal01Anime;
     animation-duration: .5s;
@@ -767,7 +763,7 @@ span {
         width: auto;
         padding: 20px 0;
     }
-    .skillCon01, .skillCon02 {
+    .skillCon {
         display: block;
         margin: 0 auto;
         margin-bottom: 30px;
@@ -926,7 +922,7 @@ span {
         }
         /* スキル */
 
-        .skillCon01, .skillCon02 {
+        .skillCon {
             width: 300px;
             height: 300px;
         }
