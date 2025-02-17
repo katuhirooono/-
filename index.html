@@ -36,69 +36,117 @@
         </header>
         <main>
             <div class="inner">
+                <section id="myProfile" class="myProfileSec">
+                    <h2 class="myProfileTitle">プロフィール</h2>
+                    <div class="myProfileText">
+                        <ul>
+                            <div class="proCon">
+                                <li class="myName">大野 勝博</li>
+                                <li class="birthday">1989/6/23</li>
+                            </div>
+                            <li class="proText">
+                                <p>                                  
+                                    <span>これまでの仕事はサービス業や小売業をしていましたが、</span>
+                                    <span>昔から興味のあったプログラミングに挑戦してみたく</span>
+                                    <span>ハローワーク職業訓練校学のプログラミング科に通い</span>
+                                    <span>HTML、CSS、JavaScript、PHPの基礎を学びました。</span>
+                              
+                                    <span>まだまだ学べたのはほんの一部だと感じているので、</span>
+                                    <span>できることを増やすため更に多くの言語も習得したいと考えています。</span>                            
+                                </p>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </section>
+                <div class="test"></div>
                 <section id="skill" class="skillSec">
                     <h2 class="skillTitle">各言語習得状況</h2>
                     <div class="mySkill">
                         <div class="skillCon">
                             <p class="skillHeading">HTML/CSS</p>
                             <ul>
-                                <li>一般的なタグを用いてのマークアップ</li>
-                                <li>サイトのデザイン構成を考えたクラス付け</li>
-                                <li>flexレイアウト</li>
-                                <li>複雑でない模写コーディングであれば１ページあたり３時間程度で完成</li>
+                                <li>ホームページの制作</li>
+                                <li>CSSでのコーディング</li>
+                                <li>制作時間は1ページあたり約3時間ほど</li>
+                                <li>レスポンシブウェブデザイン対応</li>
                             </ul>
                         </div>
                         <div class="skillCon">
                             <p class="skillHeading">javascript</p>
                             <ul>
-                                <li>IDやクラスの付け替え</li>
-                                <li>簡単なIF、while文</li>
-                                <li>モーダルウィンドウなどの実装</li>
+                                <li>HTMLタグの操作</li>
+                                <li>ハンバーガーメニュー</li>
+                                <li>モーダルウィンドウ</li>
                                 <li>スライドショーの実装など</li>
                             </ul>
                         </div>
                         <div class="skillCon">
                             <p class="skillHeading">PHP</p>
                             <ul>
-                                <li>phpを利用したヘッダーやフッターの固定</li>
-                                <li>データベースとSQL（勉強中）</li>
+                                <li>PHPを利用した要素のパーツ化</li>
+                                <li>sessionを利用したカート機能</li>
+                                <li>（カートに追加、数量変更、削除など）</li>
+                                <li>データベース操作</li>
+                                <li>（検索、追加、更新、削除）</li>
                             </ul>
                         </div>
                     </div>
                     <img class="skilGirl" src="images/skilGirl.png">
                 </section>
-                
                 <section id="gallery" class="gallerySec">
                     <h2 class="galleryTitle">Gallery</h2>
                     <div class="slide">
                         <div class="myGallery">
+                            <div class="slideBox">
+                                <ul class="sakuhinSec">
+                                    <li class="sakuhin">作品一覧</li>
+                                    <li>私が制作したサイトページ一覧です。<br>
+                                        訓練校の作品と架空のオリジナルサイトがあります。</li>
+                                </ul>
+                            </div>
+                            <!-- 演習１ -->
                             <a href="exercises01/index.html">
                                 <div class="slideBox">
-                                    <ul class="exercises01">
+                                    <ul class="exercises exercises01">
                                         <li class="imgSec"><img src="images/exercises01.png" alt="演習①のサムネイル"></li>
                                         <li><span class="siteTitle">演習①</span></li>
                                         <li>訓練校にて制作した架空のリフォーム会社のページです。</li>
                                     </ul>
                                 </div>
                             </a>
+                            <!-- 演習２ -->
                             <a href="exercises02/index.html">
                                 <div class="slideBox">
-                                    <ul class="exercises02">
+                                    <ul class="exercises exercises02">
                                         <li class="imgSec"><img src="images/exercises02.png" alt="演習②のサムネイル"></li>
                                         <li><span class="siteTitle">演習②</span>
                                         <li>訓練校にて制作した架空の観光案内のページです。</li>
                                     </ul>
                                 </div>
                             </a>
+                            <!-- 演習３ -->
+                            <a href="http://seisaku2024.starfree.jp/portfolio/ccdonuts/index.php">
+                                <div class="slideBox">
+                                    <ul class="exercises exercises03">
+                                        <li class="imgSec"><img src="images/exercises03.png" alt="演習②のサムネイル"></li>
+                                        <li><span class="siteTitle">演習③</span>
+                                        <li>訓練校にて制作した架空のドーナツ販売サイトです。</li>
+                                    </ul>
+                                </div>
+                            </a>
+                            <!-- カフェ -->
                             <a href="cafe/index.html">
-                                <ul class="portfolio01">
+                                <ul class="portfolio portfolio01">
                                     <li class="imgSec"><img src="images/portfolioSite01.png" alt="カフェのサムネイル"></li>
                                     <li><span class="siteTitle">カフェ</span></li>
                                     <li>仮想のカフェをイメージしたサイトです。</li>
                                 </ul>
                             </a>
+                            <!-- 動物園 -->
                             <a href="zoo/index.html">
-                                <ul class="portfolio02">
+                                <ul class=" portfolio portfolio02">
                                     <li class="imgSec"><img src="images/zoo.png" alt="動物園のサムネイル"></li>
                                     <li><span class="siteTitle">動物園</span>
                                     <li>架空の動物園を紹介したサイトです。</li>
@@ -140,6 +188,16 @@
                                 <li><a href="https://github.com/katuhirooono/exercises02/blob/main/exercises02/scripts/script.js" target="_blank">JavaScript</a></li>
                             </ul>
                         </div>
+                        <div class="exercises03Code codeBox">
+                            <p class="codeHeading"><span>演習③の</span><span>ソースコード</span></p>
+                            <ul>
+                                <li><a href="https://github.com/katuhirooono/ccdonatsu/tree/main/ccdonuts" target="_blank">PHP</a></li>
+                                <li><a href="https://github.com/katuhirooono/ccdonatsu/blob/main/ccdonuts/styles/style.css" target="_blank">CSS</a></li>
+                                <li><a href="https://github.com/katuhirooono/ccdonatsu/blob/main/ccdonuts/scripts/script.js" target="_blank">JavaScript</a></li>
+
+                            </ul>
+                        </div>
+                
                         <div class="exercises02Code codeBox">
                             <p class="codeHeading"><span>カフェの</span><span>ソースコード</span></p>
                             <ul>
@@ -161,8 +219,12 @@
             </main>
             <footer id="footer" class="footerSec">
                 <h2>連絡先メールアドレス</h2>
-                <p>Katuhiro Ohno</p>
-                <mail class="mail">*****@gmail.com</mail>
+                <div class="footerCon">
+                    <p>大野 勝博</p>
+                    <a href="mailto:address"><mail class="mail">oono19890623@gmail.com</mail></a>
+                </div>
+                <div class="underBer"><p>2025 Katuhiro Ohno</p></div>
+
             </footer>
             <div class="js-loding">
                 <ul class="lodingText">
