@@ -224,26 +224,61 @@ h2 {
     right: 350px;
     bottom: 450px;
 }
+/* プロフィール */
 
-
+.myProfileSec {
+    background-color: rgb(205, 200, 200);
+    border-bottom: dotted 2px rgb(49, 47, 47);
+}
+.myProfileTitle {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.myProfileText {
+    color: #fff;
+    background-color: rgb(49, 47, 47);
+    padding: 30px 100px;
+    margin: 50px 20px;
+    font-size: 20px;
+}
+.myProfileText ul {
+    display: flex;
+}
+.proText {
+    margin: 0 50px;
+    line-height: 1.5rem;
+}
+.proText span {
+    display: inline-block;
+}
+.myName {
+    width: 120px;
+    font-size: 28px;;
+    margin-bottom: 8px;
+}
+.proCon {
+    padding-right: 50px;
+    border-right: 2px solid #fff;
+}
 /* スキル */
 .skillSec {
     background-color: rgb(205, 200, 200);
     border-bottom: dotted 2px rgb(49, 47, 47);
-    position: relative;
     padding-bottom: 100px;
     margin-bottom: 100px;
+    position: relative;
 }
+
 .skillSec::after {
     content: "";
     position: fixed;
-    right: 0;
-    top: 0;
+    top: 100px;
+    margin-left: 800px;
     width: 500px;
-    height: 1500px;
+    height: 1200px;
     z-index: -1;
-    background: url(../images/mainBack.png) no-repeat center/cover;
-
+    background: url(../images/mainBack.png) no-repeat center/contain;
 }
 .skillHeading {
     font-size: 24px;
@@ -260,12 +295,11 @@ h2 {
     margin: 20px;
 }
 .skillCon {
-    cursor : pointer;
     display: none;
     margin: 20px;
     padding: 20px;
     width: 400px;
-    height: 200px;
+    height: 250px;
     line-height: 20px;
     background-color: rgb(49, 47, 47);
     color: #fff;
@@ -298,19 +332,19 @@ h2 {
     padding: 20px 40px;
     transition: all 1s;
 }
-.slideR {
-    transform: translateX(-300px);
-}
-.imgSec {
+
+.sakuhin {
+    height: 200px;
     display: flex;
     align-items: center;
-    width: 300px;
+    justify-content: center;
+    font-size: 28px;
+}
+.imgSec {
     height: 200px;
 }
-
-.myGallery img {
+.imgSec img {
     height: 100%;
-    width: 400px;
     object-fit: cover;
 }
 
@@ -321,11 +355,17 @@ h2 {
 .gallerySec li {
     margin-bottom: 20px;
 }
-
-.exercises01,
-.exercises02,
-.portfolio01,
-.portfolio02 {
+.sakuhinSec {
+    width: 350px;
+    height: 350px;
+    margin: 20px;
+    padding: 20px;
+    text-align: center;
+    background-color: rgb(49, 47, 47);
+    color: #fff;
+}
+.exercises,
+.portfolio {
     display: none;
     width: 350px;
     height: 350px;
@@ -337,17 +377,18 @@ h2 {
     animation-name: transparency;
     animation-duration: 1s;
 }
-
-.exercises01:hover,
-.exercises02:hover,
-.portfolio01:hover,
-.portfolio02:hover {
+.exercises li:last-child,
+.portfolio li:last-child {
+    text-align: left;
+}
+.exercises:hover {
     animation-name: sway;
     animation-duration: .5s;
 }
 .galleryCon {
     height: 250px;
     position: relative;
+    margin: 0 30px;
 }
 .galleryBack {
     width: 90%;
@@ -360,39 +401,27 @@ h2 {
     margin: 0 auto;
 }
 .galleryGirl {
-    cursor : pointer;
     height: 300px;
     z-index: 20;
     position: absolute;
     bottom: 0;
-    left: 350px;
+    left: 20%;
     transition: 1s;
 }
-.arrowR {
-    cursor : pointer;
-    height: 150px;
-    object-fit: contain;
-    position: absolute;
-    left: 500px;
-    bottom: 100px;
-    transition: 1s;
-}
+
+.arrowR,
 .arrowL {
     cursor : pointer;
-    display: none;
     height: 150px;
     object-fit: contain;
     position: absolute;
-    left: 200px;
-    bottom: 100px;
-    transform: scaleX(-1);
+    bottom: 130px;
 }
-.galleryGirl02 {
-    left: 900px;
-    transform: scaleX(-1);    
+.arrowR {
+    right: 0;
 }
-.arrowR02 {
-    left: 700px;
+.arrowL {
+    left: 0px;
     transform: scaleX(-1);
 }
 
@@ -408,6 +437,7 @@ h2 {
 
 .codeCon {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     padding: 20px 30px;
 }
@@ -422,7 +452,7 @@ h2 {
     border-radius: 10px;
     background-color: rgb(49, 47, 47);
     padding: 10px 20px;
-    margin: 0 20px;
+    margin: 20px 20px;
 }
 span {
     display: inline-block;
@@ -430,25 +460,40 @@ span {
 .black {
     opacity: 0.5;
 }
-.portfolioCode:hover {
+.portfolioCode:hover,
+.portfolio01Code:hover,
+.portfolio02Code:hover,
+.exercises01Code:hover,
+.exercises02Code:hover,
+.exercises03Code:hover {
     transform: scale(1.1);
 }
-.exercises01Code:hover {
-    transform: scale(1.1);
-}
-.exercises02Code:hover {
-    transform: scale(1.1);
-}
+
 /* フッター */
 .footerSec {
     background-color: rgb(165, 160, 160);
     color: rgba(49, 47, 47);
 }
+.footerCon {
+    padding: 10px 50px;
+}
 .mail, .footerSec p {
     display: block;
-    padding: 10px 20px;
-    font-size: 16px;
+    font-size: 20px;
+    margin-bottom: 10px;
 }
+.mail {
+    display: inline-block;
+    color: rgb(34, 34, 248);
+    border-bottom: 1px solid rgb(34, 34, 248);
+}
+.underBer {
+    color: #fff;
+    text-align: center;
+    background-color: rgba(49, 47, 47);
+    padding: 10px 0;
+}
+
 /* モーダル */
 .js-modal {
     position: fixed;
@@ -753,9 +798,31 @@ span {
         right: 200px;
         bottom: 450px;
     }
+
+    /* プロフィール */
+
+    .myProfileText {
+        padding: 30px 30px;
+        font-size: 16px;
+    }
+    .myName {
+        font-size: 20px;;
+    }
+    .proText {
+        margin: 0 20px;
+    }
+    .proCon {
+        width: 100px;
+        padding-right: 18px;
+    }
+
     /* スキル */
+
     .skillSec {
         padding-bottom: 0;
+    }
+    .skillSec::after {
+        margin-left: 300px;
     }
     .mySkill {
         display: block;
@@ -779,14 +846,11 @@ span {
     /* ギャラリー */
 
     .imgSec {
-        width: 260px;
         height: 200px;
     }
-
-    .exercises01,
-    .exercises02,
-    .portfolio01,
-    .portfolio02 {
+    .sakuhinSec,
+    .exercises,
+    .portfolio {
         display: block;
         width: 300px;
         height: 350px;
@@ -800,20 +864,12 @@ span {
     }
 
     .galleryGirl {
-        left: 50px;
+        left: 280px;
     }
-    .arrowR {
-        left: 200px;
-    }
-    .galleryGirl02 {
-        left: 600px;
-    }
-    .arrowR02 {
-        left: 400px;
-    }
+
     /* ソースコード */
+
     .codeCon {
-        flex-wrap: wrap;
         padding: 20px 10px;
     }
     .codeHeading {
@@ -920,6 +976,26 @@ span {
             left: 200px;
             bottom: 400px;
         }
+        /* プロフィール */
+        .myProfileText ul{
+            display: block;
+        }
+
+        .birthday {
+            padding-top: 4px;
+        }
+        .proCon {
+            width: auto;
+            display: flex;
+            margin-bottom: 24px;
+            border-right: none;
+            border-bottom: 2px solid #fff;
+        }
+        .proText {
+            margin: 0;
+            font-size: 20px;
+        }
+
         /* スキル */
 
         .skillCon {
@@ -927,7 +1003,7 @@ span {
             height: 300px;
         }
         .skillSec::after {
-            right: -100px;
+            margin-left: 50px;
         }
         /* ギャラリー */
 
@@ -936,13 +1012,11 @@ span {
         }
 
         .imgSec {
-            width: 260px;
             height: 200px;
         }
-        .exercises01,
-        .exercises02,
-        .portfolio01,
-        .portfolio02 {
+        .sakuhinSec,
+        .exercises,
+        .portfolio {
             width: 300px;
             height: 350px;
             margin: 20px;
@@ -952,23 +1026,13 @@ span {
         .galleryGirl {
             left: 110px;
         }
-        .arrowR {
-            height: 100px;
-            bottom: 120px;
-            left: 230px;
-        }
+        .arrowR,
         .arrowL {
-            display: block;
             height: 100px;
-            left: 20px;
             bottom: 120px;
-            transform: scaleX(-1);
         }
-        .galleryGirl02 {
-            transform: scaleX(-1);
-        }
-        .arrowR {
-            transform: scaleX(1);
+        .galleryCon {
+            margin: 0;
         }
         /* ソースコード */
         span {
@@ -982,5 +1046,9 @@ span {
         }
         .black p { 
             font-size: 10px;
+        }
+        /* フッター */
+        .footerCon {
+            padding: 10px 20px;
         }
 }
