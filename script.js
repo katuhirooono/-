@@ -5,6 +5,7 @@ const skillCon = document.querySelectorAll('.skillCon');
 
 const exercises01 = document.querySelector('.exercises01');
 const exercises02 = document.querySelector('.exercises02');
+const exercises03 = document.querySelector('.exercises03');
 const portfolio01 = document.querySelector('.portfolio01');
 const portfolio02 = document.querySelector('.portfolio02');
 
@@ -17,8 +18,11 @@ window.addEventListener("scroll", function () {
     if(window.scrollY >= 800) {
         exercises01.style.display ='block';
     }
-    if(window.scrollY >= 850) {
+    if(window.scrollY >= 830) {
         exercises02.style.display ='block';
+    }
+    if(window.scrollY >= 860) {
+        exercises03.style.display ='block';
     }
     if(window.scrollY >= 900) {
         portfolio01.style.display ='block';
@@ -160,7 +164,6 @@ onOff.addEventListener('click', function() {
     bikkuri.classList.remove("bikkuri03");
 });
 
-console.log(i)
 // ギャラリー
 
 const galleryGirl = document.querySelector('.galleryGirl');
@@ -170,138 +173,105 @@ const myGallery = document.querySelector('.myGallery');
 const winSizeTab = window.matchMedia('(max-width:768px)');
 const winSizeSp = window.matchMedia('(max-width:375px)');
 
-let j = 1;
+// 現在の位置を変数に(カード)
+let j = 0;
 
+// 現在の位置を変数に（ガール）
+let k = 0;
+
+// 移動する距離を変数に
+let moveCon = 390;
+
+// スマホ
+let moveConSp = 340;
+
+
+let moveGirl = 10;
+// 要素の数を入力 数が増えたときはここを変える。
+const count = 5;
+
+// 右ボタン
 arrowR.addEventListener('click', function() {
-    if(j === 4){
-        j = 1;
+    galleryGirl.style.transform = 'scaleX(1)';
+    if(j === count){
+        j = 0;
         myGallery.style.transform = 'translateX(0px)';
-    } else {
+        galleryGirl.classList.remove("galleryGirl02");
+    } else { 
         j++;
-    if(winSizeSp.matches) {
-        switch(j) {
-            case 1:
+        if(winSizeSp.matches) {
+            myGallery.style.transform = `translateX(-${moveConSp*j}px)`;
+        } else if(winSizeTab.matches) {
+            if(j <= (count-1)){
+                myGallery.style.transform = `translateX(-${(moveConSp - 3)*j}px)`;
+            } else {
+                j = 0;
                 myGallery.style.transform = 'translateX(0px)';
-                galleryGirl.classList.remove("galleryGirl02");
-                break;
-            case 2:
-                myGallery.style.transform = 'translateX(-340px)';
-                galleryGirl.classList.remove("galleryGirl02");
-                break;
-            case 3:
-                myGallery.style.transform = 'translateX(-680px)';
-                galleryGirl.classList.remove("galleryGirl02");
-                break;
-            case 4:
-                myGallery.style.transform = 'translateX(-1020px)';
-                galleryGirl.classList.remove("galleryGirl02");
-                break;
-        }
-    } else if(winSizeTab.matches) {
-        switch(j) {
-            case 1:
+            }
+        } else {
+            if(j <= (count-2)){
+                myGallery.style.transform = `translateX(-${(moveConSp - 3)*j}px)`;
+            } else {
+                j = 0;
+                galleryGirl.style.transform = 'scaleX(-1)';
                 myGallery.style.transform = 'translateX(0px)';
-                galleryGirl.classList.remove("galleryGirl02");
-                arrowR.classList.remove("arrowR02");
-                break;
-            case 2:
-                myGallery.style.transform = 'translateX(-670px)';
-                galleryGirl.classList.add("galleryGirl02");
-                arrowR.classList.add("arrowR02");
-                break;
-            case 3:
-                j = 1;
-                myGallery.style.transform = 'translateX(0px)';
-                galleryGirl.classList.remove("galleryGirl02");
-                arrowR.classList.remove("arrowR02");
-                break;
-        }
-    } else {
-        switch(j) {
-            case 1:
-                myGallery.style.transform = 'translateX(0px)';
-                galleryGirl.classList.remove("galleryGirl02");
-                arrowR.classList.remove("arrowR02");
-                break;
-            case 2:
-                myGallery.style.transform = 'translateX(-340px)';
-                galleryGirl.classList.add("galleryGirl02");
-                arrowR.classList.add("arrowR02");
-                break;                
-            case 3:
-                j = 1;
-                myGallery.style.transform = 'translateX(0px)';
-                galleryGirl.classList.remove("galleryGirl02");
-                arrowR.classList.remove("arrowR02");
-                break;
-        }
-    }
-}
-});
+            }
+            switch(j){
+                case 0:
+                    galleryGirl.style.left ='20%';
+                    break;
+                case 1:
+                    galleryGirl.style.left =`38%`;
+                    break;
+                case 2:
+                    galleryGirl.style.left =`56%`;
+                    break;
+                case 3:
+                    galleryGirl.style.left ='70%';
+                    break;
+            }
+            myGallery.style.transform = `translateX(-${moveCon*j}px)`;
+}}});
 
+// 左ボタン
 arrowL.addEventListener('click', function() {
-    if(j === 1){
-        j = 4;
-        myGallery.style.transform = 'translateX(-1020px)';
-    } else {
-        j--;
+    galleryGirl.style.transform = 'scaleX(-1)';
     if(winSizeSp.matches) {
-        switch(j) {
-            case 1:
-                myGallery.style.transform = 'translateX(0px)';
-                galleryGirl.classList.add("galleryGirl02");
-                break;
-            case 2:
-                myGallery.style.transform = 'translateX(-340px)';
-                galleryGirl.classList.add("galleryGirl02");
-                break;
-            case 3:
-                myGallery.style.transform = 'translateX(-680px)';
-                galleryGirl.classList.add("galleryGirl02");
-                break;
-            case 4:
-                myGallery.style.transform = 'translateX(-1020px)';
-                galleryGirl.classList.add("galleryGirl02");
-                break;
+        if(j === 0){
+            j = count;
+            myGallery.style.transform = `translateX(-${moveConSp*j}px)`;        
+        } else {
+            j--;
+            myGallery.style.transform = `translateX(-${moveConSp*j}px)`;
         }
     } else if(winSizeTab.matches) {
-        switch(j) {
-            case 1:
-                myGallery.style.transform = 'translateX(0px)';
-                galleryGirl.classList.remove("galleryGirl02");
-                arrowR.classList.remove("arrowR02");
-                break;
-            case 2:
-                myGallery.style.transform = 'translateX(-670px)';
-                galleryGirl.classList.add("galleryGirl02");
-                arrowR.classList.add("arrowR02");
-                break;
-            case 3:
-                j = 1;
-                myGallery.style.transform = 'translateX(0px)';
-                galleryGirl.classList.remove("galleryGirl02");
-                arrowR.classList.remove("arrowR02");
-                break;
-        }
+        if(j === 0){
+            j = count-1;
+            myGallery.style.transform = `translateX(-${moveConSp*j}px)`;        
+        } else {
+            j--;
+            myGallery.style.transform = `translateX(-${moveConSp*j}px)`;
+        }        
     } else {
-        switch(j) {
+        if(j === 0){
+            j = count - 2;
+            myGallery.style.transform = `translateX(-${moveCon*j}px)`;        
+        } else {
+            j--;
+            myGallery.style.transform = `translateX(-${moveCon*j}px)`;
+        }        
+        switch(j){
+            case 0:
+                galleryGirl.style.left ='20%';
+                break;
             case 1:
-                myGallery.style.transform = 'translateX(0px)';
-                galleryGirl.classList.remove("galleryGirl02");
-                arrowR.classList.remove("arrowR02");
+                galleryGirl.style.left =`38%`;
                 break;
             case 2:
-                myGallery.style.transform = 'translateX(-340px)';
-                galleryGirl.classList.add("galleryGirl02");
-                arrowR.classList.add("arrowR02");
-                break;                
-            case 3:
-                j = 1;
-                myGallery.style.transform = 'translateX(0px)';
-                galleryGirl.classList.remove("galleryGirl02");
-                arrowR.classList.remove("arrowR02");
+                galleryGirl.style.left =`56%`;
                 break;
-        }
-    }
-}
-});
+            case 3:
+                galleryGirl.style.left ='70%';
+                break;
+        }   
+}});
